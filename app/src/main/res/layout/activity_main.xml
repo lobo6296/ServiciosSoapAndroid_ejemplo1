@@ -6,13 +6,39 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Hello World!"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
 
+        <EditText
+            android:id="@+id/param1Txt"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:hint="Moneda Origen"
+            android:inputType="textPersonName" />
+
+        <EditText
+            android:id="@+id/param2Txt"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:hint="Moneda Actual"
+            android:inputType="textPersonName" />
+
+        <Button
+            android:id="@+id/convertirBtn"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Tipo de Cambio" />
+
+        <TextView
+            android:id="@+id/resultaView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="00.00"
+            android:textColor="@color/colorAccent"
+            android:textSize="24sp" />
+    </LinearLayout>
 </android.support.constraint.ConstraintLayout>
