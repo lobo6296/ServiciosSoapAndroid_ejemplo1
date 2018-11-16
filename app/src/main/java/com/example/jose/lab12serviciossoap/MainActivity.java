@@ -1,5 +1,6 @@
 package com.example.jose.lab12serviciossoap;
 
+import android.os.AsyncTask;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -44,7 +45,21 @@ public class MainActivity extends AppCompatActivity {
         });
     }
 
+    private class SegundoPlano extends AsyncTask<Void, Void, Void>{
+        @Override
+        protected void onPreExecute(){
 
+        }
+        @Override
+        protected Void doInBackground(Void... params){
+            convertir();
+            return null;
+        }
+        @Override
+        protected void onPostExecute(Void result){
+            tv1.setText("Response: " + resultString.toString() + "," + mensaje);
+        }
+    }
 
     private void convertir(){
         String SOAP_ACTION = "http://www.webserviceX.NET/ConversionRate";
